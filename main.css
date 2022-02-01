@@ -188,7 +188,7 @@ header .swiper-pagination-bullet-active {
   margin-top: 1rem;
   margin-bottom: 2rem;
   background: -webkit-linear-gradient(#72f2c3, #fff);
-  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: fadeIn 800ms forwards;
   opacity: 0;
