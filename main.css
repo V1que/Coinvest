@@ -158,28 +158,48 @@ main {
 header .swiper-button-prev,
 header .swiper-button-next {
   color: var(--color-6);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 500ms ease-in-out;
+}
+header:hover .swiper-button-prev,
+header:hover .swiper-button-next {
+  visibility: visible;
+  opacity: 1;
 }
 header .swiper-pagination-bullet-active {
   background: var(--color-6);
 }
+/* header .arrows {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 500ms ease-in-out;
+} */
 
+/* header:hover .arrows {
+  visibility: visible;
+  opacity: 1;
+} */
 .swiper-slide .left-side-header h1 {
   font-size: var(--h1-font);
   text-align: left;
   margin-top: 30px;
   line-height: 90px;
-  animation: fadeToRight 800ms forwards cubic-bezier(0.22, 0.32, 0, 1.54);
-  opacity: 0;
-  animation-delay: 800ms;
+  animation: movebottom 1s ease-in-out;
 }
-@keyframes fadeToRight {
-  from {
+@keyframes movebottom {
+  0% {
+    transform: translateY(-100px);
     opacity: 0;
-    transform: translateX(-100px);
   }
-  to {
+  100% {
+    transform: translateY(0px);
     opacity: 1;
-    transform: translateX(0);
   }
 }
 .swiper-slide .left-side-header p {
@@ -187,15 +207,16 @@ header .swiper-pagination-bullet-active {
   line-height: 2rem;
   margin-top: 1rem;
   margin-bottom: 2rem;
-  background: -webkit-linear-gradient(#72f2c3, #fff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: fadeIn 800ms forwards;
-  opacity: 0;
-  animation-delay: 400ms;
+  color: var(--color-6);
+  animation: movetop 1s ease-in-out;
 }
-@keyframes fadeIn {
-  to {
+@keyframes movetop {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
     opacity: 1;
   }
 }
@@ -234,9 +255,6 @@ header .swiper-pagination-bullet-active {
 }
 .swiper-slide .signup-btn {
   padding: 20px;
-  animation: fadeIn 800ms forwards;
-  opacity: 0;
-  animation-delay: 400ms;
 }
 .swiper-slide .signup {
   display: flex;
@@ -247,5 +265,6 @@ header .swiper-pagination-bullet-active {
   background: #e0e0e0;
   width: 60%;
   border-radius: 8px;
+  animation: movetop 1s ease-in-out;
 }
 /* Header Ends */
