@@ -52,18 +52,31 @@
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.0.8/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <!-- Fonts & Icons Ends -->
-    <!-- Style Sheet -->
+    <!-- Styles Sheet -->
     <link rel="stylesheet" href="main.css" />
     <!-- Style Sheets End -->
+    <!-- Slider -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <!-- Slider Ends -->
   </head>
   <body>
-    <nav class="container navbar">
-      <img src="/images/Block Chain-01.jpg" alt="" />
+    <nav class="navbar">
+      <a href="index.html">
+        <img src="/images/Block Chain-01.jpg" alt="Logo" class="logo"
+      /></a>
       <div class="middle-menu">
         <ul>
           <li><a href="#">Home</a></li>
-          <li><a href="#">Market Trends</a></li>
+          <li><a href="#">Market trends</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Learn</a></li>
           <li><a href="#">Contact</a></li>
@@ -71,10 +84,88 @@
       </div>
       <div class="right-menu">
         <ul>
-          <li><a href="">Login</a></li>
-          <li><a href="">Get Started</a></li>
+          <li><a href="#">Login</a></li>
+          <button class="primary-btn">Get started</button>
         </ul>
       </div>
     </nav>
+    <!-- Navbar ends -->
+    <main>
+      <!-- Header section Begins -->
+      <header>
+        <div class="wrapper">
+            <!-- Slider main container -->
+            <div class="swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><div class="left-side-header">
+                  <hr />
+                  <h1>Fastest & secure platform to invest in crypto</h1>
+                  <p>
+                    CoinSight is the safest place to buy and sell cryptocurrency. Sign
+                    up and get started today.
+                  </p>
+                  <div class="signup">
+                    <input type="email" placeholder="Enter email" />
+                    <button class="signup-btn primary-btn" type="">
+                      Get started
+                    </button>
+                  </div>
+                </div>
+                <img src="images/Illustration.svg" alt="" />
+              </div>
+                <div class="swiper-slide"><div class="left-side-header">
+                  <hr />
+                  <h1>Start and Build Your Crypto Portfolio Here</h1>
+                  <p>
+                    CoinSight is the safest place to buy and sell cryptocurrency. Sign
+                    up and get started today.
+                  </p>
+                  <div class="signup">
+                    <input type="email" placeholder="Enter email" />
+                    <button class="signup-btn primary-btn" type="">
+                      Get started
+                    </button>
+                  </div>
+                </div>
+                <img src="images/slider-2.png" alt="" />
+              </div>
+              <div class="swiper-slide"><div class="left-side-header">
+                  <hr />
+                  <h1>Fastest & secure platform to invest in crypto</h1>
+                  <p>
+                    CoinSight is the safest place to buy and sell cryptocurrency. Sign
+                    up and get started today.
+                  </p>
+                  <div class="signup">
+                    <input type="email" placeholder="Enter email" />
+                    <button class="signup-btn primary-btn" type="">
+                      Get started
+                    </button>
+                  </div>
+                </div>
+                <img src="images/slider-3.png" alt="" />
+              </div>
+            </div>
+                
+            </div>
+                ...
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+        </div>
+      </header>
+      
+      
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

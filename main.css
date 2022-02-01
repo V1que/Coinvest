@@ -2,10 +2,12 @@
   --color-1: #7216f2;
   --color-2: #7350f2;
   --color-3: #7180d9;
-  --color-4: #72f2c3;
+  --color-4: #53efb6;
+  --hover-btn: #82f3ca;
   --color-5: #0d0d0d;
   --color-6: #ffffff;
   --navbar-font-size: 16px;
+  --h1-font: 70px;
 }
 
 * {
@@ -37,21 +39,213 @@ li {
   margin: 0 auto;
   padding: 0 5rem;
 }
-
+main {
+  margin-top: 120px;
+}
 /* Navbar Starts */
 .navbar {
-  width: calc(90rem - 12.5rem);
-  height: 100px;
+  width: 100%;
+  height: 6.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 0.0625rem solid rgba(113, 128, 217);
+  padding: 0 10rem;
+  position: fixed;
+  top: 0;
+  z-index: 200;
+  animation: fadeDown 1000ms forwards;
+  opacity: 0;
 }
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.navbar.fix-nav {
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background: var(--color-6);
+  z-index: 999;
+  border-bottom: 1px solid var(--color-6);
+}
+
 .navbar ul {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .navbar ul li a {
   color: var(--color-5);
   font-size: var(--navbar-font-size);
   font-weight: bold;
-  padding: 0 10px;
+  padding: 0 25px;
+  position: relative;
+  overflow: hidden;
 }
+.navbar ul li a:hover {
+  color: var(--color-4);
+}
+
+.navbar ul li a::after {
+  background-color: var(--color-4);
+  content: "";
+  width: 0;
+  text-align: center;
+  height: 3px;
+  left: 10px;
+  bottom: 0;
+  transition: width 0.35s ease 0s;
+  position: absolute;
+}
+
+.navbar ul li a:hover::after {
+  width: 70%;
+}
+
+.logo {
+  height: 4.375rem;
+  width: 4.375rem;
+  border-radius: 50%;
+}
+.primary-btn {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 20px;
+  text-align: center;
+  background: var(--color-4);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.primary-btn:hover {
+  background: var(--hover-btn);
+}
+.primary-btn:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+  color: var(--color-5);
+}
+/* Navbar Ends */
+/* Header begins */
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background: var(--color-1);
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.swiper {
+  width: 80%;
+  height: fit-content;
+  color: var(--color-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .swiper-button-prev,
+header .swiper-button-next {
+  color: var(--color-6);
+}
+header .swiper-pagination-bullet-active {
+  background: var(--color-6);
+}
+
+.swiper-slide .left-side-header h1 {
+  font-size: var(--h1-font);
+  text-align: left;
+  margin-top: 30px;
+  line-height: 90px;
+  animation: fadeToRight 800ms forwards cubic-bezier(0.22, 0.32, 0, 1.54);
+  opacity: 0;
+  animation-delay: 800ms;
+}
+@keyframes fadeToRight {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.swiper-slide .left-side-header p {
+  font-size: 1.4375rem;
+  line-height: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  background: -webkit-linear-gradient(#72f2c3, #fff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 800ms forwards;
+  opacity: 0;
+  animation-delay: 400ms;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.swiper-slide img {
+  width: 40%;
+  margin-left: 80px;
+  animation: fadeToLeft 1200ms forwards;
+  opacity: 0;
+  animation-delay: 900ms;
+}
+@keyframes fadeToLeft {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.swiper-slide .left-side-header hr {
+  width: 30%;
+  height: 3px;
+  border: 3px solid var(--color-4);
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.swiper-slide .left-side-header input[type="email"] {
+  padding: 20px;
+  border: none;
+  outline: none;
+  background: #e0e0e0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  text-indent: 5px;
+}
+.swiper-slide .signup-btn {
+  padding: 20px;
+  animation: fadeIn 800ms forwards;
+  opacity: 0;
+  animation-delay: 400ms;
+}
+.swiper-slide .signup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #e0e0e0;
+  width: 60%;
+  border-radius: 8px;
+}
+/* Header Ends */
