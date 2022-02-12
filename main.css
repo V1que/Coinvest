@@ -7,8 +7,6 @@
   --color-5: #0d0d0d;
   --color-6: #ffffff;
   --navbar-font-size: 16px;
-  /* --h1-font: 70px;
-  --h3-font: 28px; */
 }
 
 * {
@@ -21,7 +19,6 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  /* background-color: var(--color-1); */
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
   width: 100vw;
@@ -340,7 +337,6 @@ header .swiper-pagination-bullet-active {
 .market-trend {
   background-color: #6387f2;
   text-align: left;
-  /* color: var(--color-6); */
 }
 
 .crypto-icon {
@@ -419,7 +415,6 @@ header .swiper-pagination-bullet-active {
 @media (max-width: 968px) {
   * {
     width: auto;
-
     margin: 0;
     padding: 0;
   }
@@ -605,6 +600,23 @@ header .swiper-pagination-bullet-active {
   .newbie-btn {
     margin: 10px;
   }
+  .primary-btn {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 30px;
+    text-align: center;
+    background: var(--color-4);
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+  .primary-btn:hover {
+    background: var(--hover-btn);
+  }
+  .primary-btn:active {
+    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+    color: var(--color-5);
+  }
   .amazing-features {
     padding: 30px;
     width: 100%;
@@ -614,7 +626,4 @@ header .swiper-pagination-bullet-active {
     text-align: left;
     padding: 50px;
   }
-  /* .market-trend .row {
-    padding: 30px;
-  } */
 }
